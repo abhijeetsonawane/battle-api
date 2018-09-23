@@ -4,9 +4,8 @@
  * Module dependencies.
  */
 
-var app   = require('./server');
-var debug = require('debug')('battle-api:server');
-var http  = require('http');
+var app  = require('./server');
+var http = require('http');
 
 /**
  * Get port from environment and store in Express.
@@ -76,6 +75,7 @@ function onError(error) {
       throw error;
   }
 }
+
 /**
  * Event listener for HTTP server "listening" event.
  */
@@ -85,5 +85,5 @@ function onListening() {
   var bind = typeof addr === 'string'
              ? 'pipe ' + addr
              : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }

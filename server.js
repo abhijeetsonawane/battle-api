@@ -1,12 +1,10 @@
 const express      = require('express');
 const cookieParser = require('cookie-parser');
-const logger       = require('morgan');
 
 const battleAPIRoutes = require('./routes/battle');
 
 const server = express();
 
-server.use(logger('dev'));
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 server.use(cookieParser());

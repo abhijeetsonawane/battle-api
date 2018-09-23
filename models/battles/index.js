@@ -5,14 +5,21 @@ const dbConf       = require("../../config").db
 const BattleSchema    = require("./schema")
 const SearchOperators = require("./search-operators")
 
-mongoose.connect('mongodb://localhost:27017/battlefield');
-// mongoose.connect(`mongodb://${dbConf.credentials.username}:${dbConf.credentials.password}@${dbConf.connection.host}:${dbConf.connection.port}/${dbConf.connection.database_name}`);
+mongoose.connect(`mongodb://${dbConf.credentials.username}:${dbConf.credentials.password}@${dbConf.connection.host}:${dbConf.connection.port}/${dbConf.connection.database_name}`);
 
+/**
+ * Gets count of the battles that were being fought
+ * @returns {Promise}
+ */
 BattleSchema.methods.getCount = function () {
   return this.model('battles')
   .count();
 }
 
+/**
+ * TODO
+ * @returns {Promise}
+ */
 BattleSchema.methods.stats = function () {
   return this.model('battles')
   .aggregate([{
