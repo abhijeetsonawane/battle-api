@@ -1,0 +1,13 @@
+{
+  "db": {
+    "connection": {
+      "host": "ds121589.mlab.com",
+      "port": 21589,
+      "database_name": "battles"
+    },
+    "credentials": {
+      "username": "abhijeet",
+      "password": "abc123"
+    }
+  }
+}
